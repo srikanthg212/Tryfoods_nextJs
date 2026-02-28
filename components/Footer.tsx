@@ -4,15 +4,17 @@ export default function Footer() {
   return (
     <footer className="relative py-16 overflow-hidden">
       
-      {/* Background Image */}
+      {/* Background Image - Zoomed Out */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-no-repeat"
         style={{
           backgroundImage: "url('/background.png')",
+          backgroundSize: '110%',
+          backgroundPosition: 'center bottom',
         }}
       >
         {/* Dark overlay for footer */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 relative z-10">
