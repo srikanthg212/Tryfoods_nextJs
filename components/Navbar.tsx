@@ -14,25 +14,25 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed w-full z-50 bg-white/60 backdrop-blur-md border-b border-white/20">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <header className="fixed w-full z-50 bg-white/75 backdrop-blur-md border-b border-white/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Image 
             src="/logo.png" 
             alt="Tryfoods Logo" 
-            width={200} 
-            height={70}
-            className="h-16 w-auto"
+            width={260} 
+            height={90}
+            className="h-20 sm:h-24 w-auto"
             priority
           />
         </div>
 
-        <nav className="hidden md:flex gap-8 items-center">
+        <nav className="hidden md:flex gap-6 lg:gap-8 items-center">
           {items.map((item) => (
             <Link
               key={item.name}
               href="#"
-              className={`relative text-[#2d5016] font-medium text-[16px] transition-colors hover:text-[#4a7c2c] ${
+              className={`relative text-[#2d5016] font-medium text-[15px] lg:text-[16px] transition-colors hover:text-[#4a7c2c] ${
                 item.underline ? 'border-b-2 border-[#2d5016] pb-1' : ''
               }`}
             >
