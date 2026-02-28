@@ -16,13 +16,13 @@ export default function Navbar() {
   return (
     <header className="fixed w-full z-50 bg-white/75 backdrop-blur-md border-b border-white/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center bg-white/40 backdrop-blur-sm px-3 py-2 rounded-lg">
           <Image 
             src="/logo.png" 
             alt="Tryfoods Logo" 
-            width={260} 
-            height={90}
-            className="h-20 sm:h-24 w-auto"
+            width={312} 
+            height={108}
+            className="h-24 sm:h-28 w-auto"
             priority
           />
         </div>
