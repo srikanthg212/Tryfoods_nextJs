@@ -21,6 +21,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
 }
 
 html {
@@ -34,48 +35,50 @@ html {
   }
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-  width: 8px;
-}
-
-body::-webkit-scrollbar-track {
-  background: #e5f2dc;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #6b9b37;
-  border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-  background: #4a7c2c;
-}
-
-/* Custom animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
+/* Optimized scrollbar - only load when needed */
+@media (min-width: 768px) {
+  body::-webkit-scrollbar {
+    width: 8px;
   }
-  50% {
-    transform: translateY(-20px);
+
+  body::-webkit-scrollbar-track {
+    background: #e5f2dc;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: #6b9b37;
+    border-radius: 10px;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: #4a7c2c;
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* Premium glassmorphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+/* Content visibility for performance */
+.lazy-content {
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
 }
 
-/* Smooth transitions for all interactive elements */
-button, a {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Will-change for animations - use sparingly */
+.animate-transform {
+  will-change: transform;
+}
+
+.animate-opacity {
+  will-change: opacity;
 }
 
