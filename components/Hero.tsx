@@ -14,7 +14,8 @@ export default function Hero() {
 
   const videoY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const sideY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
+  const sideOpacity = useTransform(scrollYProgress, [0, 0.5], [0.7, 0.2]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 0.5, 0]);
 
   return (
     <section ref={ref} className="relative min-h-[150vh] overflow-hidden pt-0">
@@ -34,13 +35,13 @@ export default function Hero() {
 
       <div className="relative flex min-h-screen pt-24">
 
-        {/* LEFT PANEL - VEG SALAD - Blended with Fade Effect */}
+        {/* LEFT PANEL - VEG SALAD - Smaller with Scroll Opacity */}
         <motion.div
-          style={{ y: sideY }}
+          style={{ y: sideY, opacity: sideOpacity }}
           className="hidden lg:flex w-1/3 items-center justify-center relative"
         >
           <div className="relative w-full h-full flex items-center justify-center">
-            <div className="relative w-[85%]">
+            <div className="relative w-[60%]">
               <Image 
                 src="/veg-salad.png" 
                 alt="Veg Salad Bowl"
@@ -66,7 +67,7 @@ export default function Hero() {
         {/* CENTER VIDEO */}
         <div className="flex-1 flex items-center justify-center relative px-4">
           <motion.div
-            style={{ y: videoY, opacity }}
+            style={{ y: videoY }}
             className="relative w-[340px] md:w-[420px] h-[680px] rounded-[3rem] overflow-hidden shadow-2xl border-[10px] border-white/90 backdrop-blur-sm"
           >
             <video
@@ -82,13 +83,13 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT PANEL - NON-VEG SALAD - Blended with Fade Effect */}
+        {/* RIGHT PANEL - NON-VEG SALAD - Smaller with Scroll Opacity */}
         <motion.div
-          style={{ y: sideY }}
+          style={{ y: sideY, opacity: sideOpacity }}
           className="hidden lg:flex w-1/3 items-center justify-center relative"
         >
           <div className="relative w-full h-full flex items-center justify-center">
-            <div className="relative w-[85%]">
+            <div className="relative w-[60%]">
               <Image 
                 src="/nonveg-salad.png" 
                 alt="Non-Veg Salad Bowl"
@@ -112,10 +113,10 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Hero Text - Premium Typography */}
+      {/* Hero Text - Lower Position with Scroll Fade */}
       <motion.div 
-        style={{ opacity }}
-        className="absolute bottom-32 left-1/2 -translate-x-1/2 text-center max-w-3xl px-4"
+        style={{ opacity: titleOpacity }}
+        className="absolute bottom-[50px] left-1/2 -translate-x-1/2 text-center max-w-3xl px-4"
       >
         <h2 className="text-5xl md:text-6xl font-bold text-[#2d5016] tracking-tight leading-tight drop-shadow-lg" style={{ fontFamily: 'Georgia, serif' }}>
           Fresh<br />Mediterranean Bowls
