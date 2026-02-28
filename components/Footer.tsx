@@ -23,9 +23,9 @@ export default function Footer() {
           <Image 
             src="/logo.png" 
             alt="Tryfoods Logo" 
-            width={180} 
-            height={60}
-            className="h-12 sm:h-14 w-auto mb-4 brightness-0 invert drop-shadow-lg"
+            width={220} 
+            height={76}
+            className="h-16 sm:h-20 w-auto mb-4 drop-shadow-xl"
           />
           <p className="text-white/90 text-sm mt-4 sm:mt-6 leading-relaxed drop-shadow-md">
             Fresh salads delivered to your doorstep daily.
@@ -46,7 +46,7 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold mb-4 sm:mb-6 text-base sm:text-lg text-white drop-shadow-md">Contact</h4>
           <p className="text-sm mb-2 text-white/90 drop-shadow-sm">support@tryfoods.in</p>
-          <p className="text-sm mb-4 sm:mb-6 text-white/90 drop-shadow-sm">+91 98765 43210</p>
+          <p className="text-sm mb-4 sm:mb-6 text-white/90 drop-shadow-sm">+91 7736759550</p>
 
           <div className="flex gap-3 sm:gap-4 mt-4 sm:mt-6">
             <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-all hover:scale-110 text-white">
