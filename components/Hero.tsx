@@ -32,24 +32,34 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent"></div>
       </div>
 
-      <div className="relative flex min-h-screen pt-20">
+      <div className="relative flex min-h-screen pt-24">
 
-        {/* LEFT PANEL - VEG SALAD - Blended into background */}
+        {/* LEFT PANEL - VEG SALAD - Blended with Fade Effect */}
         <motion.div
           style={{ y: sideY }}
           className="hidden lg:flex w-1/3 items-center justify-center relative"
         >
           <div className="relative w-full h-full flex items-center justify-center">
-            <Image 
-              src="/veg-salad.png" 
-              alt="Veg Salad Bowl"
-              width={500}
-              height={500}
-              className="w-[85%] h-auto object-contain drop-shadow-2xl"
-              style={{
-                filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))',
-              }}
-            />
+            <div className="relative w-[85%]">
+              <Image 
+                src="/veg-salad.png" 
+                alt="Veg Salad Bowl"
+                width={500}
+                height={500}
+                className="w-full h-auto object-contain"
+                style={{
+                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))',
+                }}
+              />
+              {/* Radial gradient mask for fading edges */}
+              <div 
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: 'radial-gradient(circle at center, transparent 40%, rgba(255,255,255,0.3) 60%, rgba(255,255,255,0.9) 85%)',
+                  mixBlendMode: 'multiply',
+                }}
+              ></div>
+            </div>
           </div>
         </motion.div>
 
@@ -72,22 +82,32 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT PANEL - NON-VEG SALAD - Blended into background */}
+        {/* RIGHT PANEL - NON-VEG SALAD - Blended with Fade Effect */}
         <motion.div
           style={{ y: sideY }}
           className="hidden lg:flex w-1/3 items-center justify-center relative"
         >
           <div className="relative w-full h-full flex items-center justify-center">
-            <Image 
-              src="/nonveg-salad.png" 
-              alt="Non-Veg Salad Bowl"
-              width={500}
-              height={500}
-              className="w-[85%] h-auto object-contain drop-shadow-2xl"
-              style={{
-                filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))',
-              }}
-            />
+            <div className="relative w-[85%]">
+              <Image 
+                src="/nonveg-salad.png" 
+                alt="Non-Veg Salad Bowl"
+                width={500}
+                height={500}
+                className="w-full h-auto object-contain"
+                style={{
+                  filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.25))',
+                }}
+              />
+              {/* Radial gradient mask for fading edges */}
+              <div 
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: 'radial-gradient(circle at center, transparent 40%, rgba(255,255,255,0.3) 60%, rgba(255,255,255,0.9) 85%)',
+                  mixBlendMode: 'multiply',
+                }}
+              ></div>
+            </div>
           </div>
         </motion.div>
       </div>
