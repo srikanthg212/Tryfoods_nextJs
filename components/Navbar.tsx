@@ -5,44 +5,45 @@ import Image from "next/image";
 
 export default function Navbar() {
   const items = [
-    "Home",
-    "Menu",
-    "Cart",
-    "Gallery",
-    "About Us",
-    "Contact",
+    { name: "Home", underline: false },
+    { name: "Menu", underline: true },
+    { name: "Cart", underline: false },
+    { name: "Gallery", underline: false },
+    { name: "About Us", underline: false },
+    { name: "Contact", underline: false },
   ];
 
   return (
-    <header className="fixed w-full z-50 bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <header className="fixed w-full z-50 bg-white/60 backdrop-blur-md border-b border-white/20">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Image 
             src="/logo.png" 
             alt="Tryfoods Logo" 
-            width={180} 
-            height={60}
-            className="h-14 w-auto drop-shadow-md"
+            width={200} 
+            height={70}
+            className="h-16 w-auto"
             priority
           />
         </div>
 
-        <nav className="hidden md:flex gap-8 text-[#2d5016] font-medium text-[15px]">
+        <nav className="hidden md:flex gap-8 items-center">
           {items.map((item) => (
             <Link
-              key={item}
+              key={item.name}
               href="#"
-              className="relative group transition-colors hover:text-[#4a7c2c] drop-shadow-sm"
+              className={`relative text-[#2d5016] font-medium text-[16px] transition-colors hover:text-[#4a7c2c] ${
+                item.underline ? 'border-b-2 border-[#2d5016] pb-1' : ''
+              }`}
             >
-              {item}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#4a7c2c] transition-all group-hover:w-full"></span>
+              {item.name}
             </Link>
           ))}
         </nav>
 
         <button className="hidden md:block">
           <svg 
-            className="w-6 h-6 text-[#2d5016] drop-shadow-sm" 
+            className="w-6 h-6 text-[#2d5016]" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
