@@ -14,7 +14,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-green-100/20">
+    <header className="fixed w-full z-50 bg-transparent">
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         <div className="flex items-center">
           <Image 
@@ -22,7 +22,7 @@ export default function Navbar() {
             alt="Tryfoods Logo" 
             width={180} 
             height={60}
-            className="h-14 w-auto"
+            className="h-14 w-auto drop-shadow-md"
             priority
           />
         </div>
@@ -32,17 +32,17 @@ export default function Navbar() {
             <Link
               key={item}
               href="#"
-              className="relative group transition-colors hover:text-[#6b9b37]"
+              className="relative group transition-colors hover:text-[#4a7c2c] drop-shadow-sm"
             >
               {item}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#6b9b37] transition-all group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#4a7c2c] transition-all group-hover:w-full"></span>
             </Link>
           ))}
         </nav>
 
         <button className="hidden md:block">
           <svg 
-            className="w-6 h-6 text-[#2d5016]" 
+            className="w-6 h-6 text-[#2d5016] drop-shadow-sm" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
