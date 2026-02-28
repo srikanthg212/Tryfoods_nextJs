@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -12,36 +13,42 @@ export default function Hero() {
   });
 
   const videoY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const sideY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const sideY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.3]);
 
   return (
-    <section ref={ref} className="relative min-h-[150vh] overflow-hidden pt-20">
+    <section ref={ref} className="relative min-h-[150vh] overflow-hidden pt-0">
 
-      {/* Premium Natural Background Image */}
+      {/* Premium Natural Background Image - Zoomed Out */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-no-repeat"
         style={{
           backgroundImage: "url('/background.png')",
+          backgroundSize: '110%',
+          backgroundPosition: 'center top',
         }}
       >
-        {/* Overlay for better content visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10"></div>
+        {/* Very subtle overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent"></div>
       </div>
 
-      <div className="relative flex min-h-screen">
+      <div className="relative flex min-h-screen pt-20">
 
-        {/* LEFT PARALLAX - VEG BOWL */}
+        {/* LEFT PANEL - VEG SALAD - Blended into background */}
         <motion.div
           style={{ y: sideY }}
-          className="hidden lg:flex w-1/3 items-center justify-center p-8"
+          className="hidden lg:flex w-1/3 items-center justify-center relative"
         >
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-full blur-2xl"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80" 
-              alt="Veg Salad"
-              className="relative rounded-full w-80 h-80 object-cover shadow-2xl border-8 border-white"
+          <div className="relative w-full h-full flex items-center justify-center">
+            <Image 
+              src="/veg-salad.png" 
+              alt="Veg Salad Bowl"
+              width={500}
+              height={500}
+              className="w-[85%] h-auto object-contain drop-shadow-2xl"
+              style={{
+                filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))',
+              }}
             />
           </div>
         </motion.div>
@@ -65,17 +72,21 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT PARALLAX - NON-VEG BOWL */}
+        {/* RIGHT PANEL - NON-VEG SALAD - Blended into background */}
         <motion.div
           style={{ y: sideY }}
-          className="hidden lg:flex w-1/3 items-center justify-center p-8"
+          className="hidden lg:flex w-1/3 items-center justify-center relative"
         >
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-full blur-2xl"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80" 
-              alt="Non-Veg Salad"
-              className="relative rounded-full w-80 h-80 object-cover shadow-2xl border-8 border-white"
+          <div className="relative w-full h-full flex items-center justify-center">
+            <Image 
+              src="/nonveg-salad.png" 
+              alt="Non-Veg Salad Bowl"
+              width={500}
+              height={500}
+              className="w-[85%] h-auto object-contain drop-shadow-2xl"
+              style={{
+                filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))',
+              }}
             />
           </div>
         </motion.div>
