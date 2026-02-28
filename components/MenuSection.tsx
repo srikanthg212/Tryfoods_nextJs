@@ -14,15 +14,17 @@ export default function MenuSection() {
   return (
     <section className="py-24 relative overflow-hidden">
       
-      {/* Background Image */}
+      {/* Background Image - Zoomed Out */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-no-repeat"
         style={{
           backgroundImage: "url('/background.png')",
+          backgroundSize: '110%',
+          backgroundPosition: 'center center',
         }}
       >
-        {/* Overlay for content visibility */}
-        <div className="absolute inset-0 bg-white/10"></div>
+        {/* Light overlay for content visibility */}
+        <div className="absolute inset-0 bg-white/5"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
