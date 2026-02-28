@@ -17,7 +17,7 @@ export default function Hero() {
   const sideOpacity = useTransform(scrollYProgress, [0, 0.5], [0.7, 0.2]);
 
   return (
-    <section ref={ref} className="relative min-h-[150vh] overflow-hidden pt-0">
+    <section ref={ref} className="relative min-h-[160vh] overflow-hidden pt-0 pb-32">
 
       {/* Premium Natural Background Image - Zoomed Out */}
       <div 
@@ -29,7 +29,7 @@ export default function Hero() {
         }}
       >
         {/* Very subtle overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/20"></div>
       </div>
 
       <div className="relative flex min-h-screen pt-24 sm:pt-28 md:pt-32">
@@ -108,9 +108,9 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Hero Text - Always Visible - Lower Position */}
+      {/* Hero Text - Even Lower Position, No Overlap */}
       <div 
-        className="absolute bottom-0 sm:bottom-[-20px] md:bottom-[-30px] left-1/2 -translate-x-1/2 text-center max-w-3xl px-4"
+        className="absolute bottom-20 sm:bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 text-center max-w-3xl px-4 z-20"
       >
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#2d5016] tracking-tight leading-tight drop-shadow-lg" style={{ fontFamily: 'Georgia, serif' }}>
           Fresh<br />Mediterranean Bowls
