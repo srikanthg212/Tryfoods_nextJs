@@ -108,9 +108,9 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Hero Text - No Fade, Always Visible */}
+      {/* Hero Text - Always Visible - Lower Position */}
       <div 
-        className="absolute bottom-[40px] sm:bottom-[50px] md:bottom-[60px] left-1/2 -translate-x-1/2 text-center max-w-3xl px-4"
+        className="absolute bottom-0 sm:bottom-[-20px] md:bottom-[-30px] left-1/2 -translate-x-1/2 text-center max-w-3xl px-4"
       >
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#2d5016] tracking-tight leading-tight drop-shadow-lg" style={{ fontFamily: 'Georgia, serif' }}>
           Fresh<br />Mediterranean Bowls
