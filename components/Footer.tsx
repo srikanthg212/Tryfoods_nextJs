@@ -4,13 +4,11 @@ export default function Footer() {
   return (
     <footer className="relative py-12 sm:py-16 overflow-hidden">
       
-      {/* Background Image - Zoomed Out */}
+      {/* New Unified Background */}
       <div 
-        className="absolute inset-0 bg-no-repeat"
+        className="absolute inset-0 bg-no-repeat bg-cover bg-center"
         style={{
-          backgroundImage: "url('/background.png')",
-          backgroundSize: '110%',
-          backgroundPosition: 'center bottom',
+          backgroundImage: "url('/new-background.png')",
         }}
       >
         {/* Reduced dark overlay for better blending */}
