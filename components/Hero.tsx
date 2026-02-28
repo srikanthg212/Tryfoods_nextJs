@@ -18,15 +18,15 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative min-h-[150vh] overflow-hidden pt-20">
 
-      {/* Premium Natural Background with Leaves */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#d8e8c8] via-[#c5ddb0] to-[#b8d4a0]">
-        {/* Subtle leaf decorations */}
-        <div className="absolute top-10 right-10 opacity-20">
-          <div className="w-32 h-32 bg-green-800/10 rounded-full blur-3xl"></div>
-        </div>
-        <div className="absolute bottom-20 left-10 opacity-20">
-          <div className="w-40 h-40 bg-green-700/10 rounded-full blur-3xl"></div>
-        </div>
+      {/* Premium Natural Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/background.png')",
+        }}
+      >
+        {/* Overlay for better content visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10"></div>
       </div>
 
       <div className="relative flex min-h-screen">
@@ -86,10 +86,10 @@ export default function Hero() {
         style={{ opacity }}
         className="absolute bottom-32 left-1/2 -translate-x-1/2 text-center max-w-3xl px-4"
       >
-        <h2 className="text-5xl md:text-6xl font-bold text-[#2d5016] tracking-tight leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+        <h2 className="text-5xl md:text-6xl font-bold text-[#2d5016] tracking-tight leading-tight drop-shadow-lg" style={{ fontFamily: 'Georgia, serif' }}>
           Fresh<br />Mediterranean Bowls
         </h2>
-        <p className="mt-6 text-xl text-[#3d6b1f] font-light tracking-wide" style={{ fontFamily: 'Georgia, serif' }}>
+        <p className="mt-6 text-xl text-[#3d6b1f] font-light tracking-wide drop-shadow-md" style={{ fontFamily: 'Georgia, serif' }}>
           Nourish your body. Thrive daily.
         </p>
         <button className="mt-8 px-10 py-4 bg-[#4a7c2c] text-white text-lg font-medium rounded-full shadow-xl hover:bg-[#3d6b1f] hover:shadow-2xl transition-all duration-300 hover:scale-105">
